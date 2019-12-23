@@ -50,7 +50,7 @@ if (isset($_GET["registration"]))
         ?>
         <input type="text" placeholder="Введите логин" name="login">
         <input type="password" placeholder="Введите пароль" name="password">
-        <input type="submit" name="registration" value="Зарегистрироваться">
+        <input id="send" type="submit" name="registration" value="Зарегистрироваться">
     </form>
 </body>
 </html>

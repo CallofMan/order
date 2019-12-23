@@ -8,6 +8,16 @@ font-family: 'Open Sans', sans-serif;
 
 a{
 text-decoration: none;
+padding: 20px;
+background-color: rgb(235, 225, 192);
+color: rgb(89,189,209);
+font-weight: bold;
+font-size: 16pt;
+}
+a:hover 
+{
+    color: rgb(227,144,54);
+    background-color: rgb(85,135,97);
 }
 
 html{
@@ -16,6 +26,8 @@ height: 100%;
 
 body{
 min-height: 100%;
+background: rgb(227,144,54);
+background: linear-gradient(90deg, rgba(227,144,54,1) 0%, rgba(85,135,97,1) 50%, rgba(89,189,209,1) 99%);
 }
 
 html, body{
@@ -25,26 +37,36 @@ justify-content: center;
 align-items: flex-start;
 }
 
-h1{
-text-align: center;
-margin-bottom: 60px;
-font-size: 50px;
-}
 
 form{
-align-self: center;
-display: flex;
-flex-direction: column;
-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+    margin: 200px auto;
+}
+h1, p{
+    color: rgb(235, 225, 192);
 }
 
 form input{
-padding: 20px;
-font-size: 20px;
+    width: 80%;
+    height: 20%;
+    font-size: 16pt;
+    transition: all 0.2;
 }
 
 .enter{
 position: absolute;
 top: 0px;
 right: 0px;
+}
+
+#send:hover{
+    background-color: rgb(89,189,209);
+    color: rgb(170, 96, 16);
+    transition: all 0.2;
+    cursor: pointer;
 }

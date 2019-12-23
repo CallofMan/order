@@ -21,6 +21,8 @@ margin: 10px auto;
 
 body{
 min-height: 100%;
+background: rgb(227,144,54);
+background: linear-gradient(90deg, rgba(227,144,54,1) 0%, rgba(85,135,97,1) 50%, rgba(89,189,209,1) 99%);
 }
 
 html, body{

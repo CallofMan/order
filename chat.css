@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+*{
+margin: 0px;
+padding: 0px;
+font-family: 'Open Sans', sans-serif;
+}
+
+a{
+text-decoration: none;
+}
+
+html{
+height: 100%;
+}
+
+hr{
+width: 80%;
+margin: 10px auto;
+}
+
+body{
+min-height: 100%;
+}
+
+html, body{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+}
+
+#logout{
+position: absolute;
+top: 0px;
+right: 0px;
+}
+
+#adminpanel{
+position: absolute;
+top: 20px;
+right: 0px;
+}
+
+.chat{
+width: 600px;
+height: 700px;
+
+display: flex;
+align-self: center;
+flex-direction: column;
+
+border: 1px solid black;
+}
+
+.messages{
+display: flex;
+flex-flow: column nowrap;
+overflow-y: scroll;
+
+height: 90%;
+}
+
+
+.message{
+border: 1px solid green;
+display: inline-flex;
+flex-flow: column nowrap;
+}
+
+.loginAndButton{
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+margin-top: 10px;
+}
+
+.userLogin{
+color: red;
+}
+
+.inputAndSubmit{
+height: 10%;
+display: flex;
+flex-direction: row;
+}
+
+.inputAndSubmit textarea{
+width: 80%;
+resize: none;
+}
+
+.inputAndSubmit input{
+width: 20%;
+
+}
+
+.delete{
+background-color: white;
+border: 1px solid black;
+
+padding: 5px; 
+}

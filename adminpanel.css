@@ -16,8 +16,12 @@ font-size: 16pt;
 }
 a:hover 
 {
-    color: rgb(227,144,54);
-    background-color: rgb(85,135,97);
+    color: rgb(255, 239, 194);
+    background-color: rgb(57, 177, 121);
+}
+#exit:hover{
+    background-color: rgb(148, 62, 62);
+    color: black;
 }
 
 html{

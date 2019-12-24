@@ -8,6 +8,29 @@ font-family: 'Open Sans', sans-serif;
 
 a{
 text-decoration: none;
+padding: 20px;
+    background-color: rgb(235, 225, 192);
+    color: rgb(89,189,209);
+    font-weight: bold;
+    font-size: 16pt;
+}
+a:hover{
+    background-color: rgb(57, 177, 121);
+    color: rgb(255, 239, 194);
+    transition: all 0.2;
+    cursor: pointer;
+}
+#exit:hover{
+    background-color: rgb(148, 62, 62);
+    color: black;
+}
+
+#links{
+    height: 200px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 html{
@@ -28,8 +51,8 @@ background: linear-gradient(90deg, rgba(227,144,54,1) 0%, rgba(85,135,97,1) 50%,
 html, body{
 width: 100%;
 display: flex;
-justify-content: center;
-align-items: flex-start;
+justify-content: space-around;
+align-items: center;
 }
 
 #logout{

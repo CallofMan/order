@@ -19,11 +19,7 @@ if (empty($_SESSION["id_user"]))
 </head>
 <body>
     <span class="idLoginUser" style="display: none;"><?php echo $_SESSION['id_user']; ?></span>
-    <a href="logout.php" id="logout">Выйти</a>
-    <?php if ($_SESSION['id_user'] == 1)
-    {
-        echo "<a href='adminpanel.php' id='adminpanel'>Панель администратора</a>";
-    } ?>
+
     <div class="chat">
         <div class="messages">
         </div>
@@ -31,6 +27,14 @@ if (empty($_SESSION["id_user"]))
             <textarea name="messageText" class="messageText" placeholder="Введите сообщение"></textarea>
             <input type="submit" name="messageSubmit" value="Отправить">
         </form>
+    </div>
+
+    <div id='links'>
+        <?php if ($_SESSION['id_user'] == 1)
+        {
+            echo "<a href='adminpanel.php'>Панель администратора</a>";
+        } ?>
+        <a href="logout.php" id='exit'>Выйти</a>
     </div>
 
     <script>

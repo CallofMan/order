@@ -35,7 +35,6 @@ if (isset($_GET["enter"]))
     <title>Авторизация</title>
 </head>
 <body>
-    <a class="registration" href="registration.php">Зарегистрироваться</a>
     <div>
         <h1>АВТОРИЗАЦИЯ</h1>
         <form method="GET" action="" id="login">

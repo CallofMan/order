@@ -11,6 +11,11 @@ if (isset($_GET['deleteUser']))
     $userId = $_GET['idUser'];
     mysqli_query($link, "DELETE FROM users WHERE id_user = '$userId'");
 }
+
+if(isset($_GET['addUser']))
+{
+    Header("Location: registration.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +45,7 @@ if (isset($_GET['deleteUser']))
             ?>
         </div>
 
-        <form id="infoUser">
+        <form id="infoUser" action="" method="GET">
             <p>ntcnпра</p>
             <p>dfgdfg</p>
             <p>sdgfgdsfg</p>
@@ -57,7 +62,7 @@ if (isset($_GET['deleteUser']))
 
     <div id="links">
         <a href="chat.php">Вернуться в чат</a>
-        <a href="logout.php">Выйти</a>
+        <a href="logout.php" id="exit">Выйти</a>
     </div>
     
 </body>

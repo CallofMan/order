@@ -68,14 +68,13 @@ right: 0px;
 }
 
 .chat{
-width: 600px;
+width: 800px;
 height: 700px;
 
 display: flex;
 align-self: center;
 flex-direction: column;
 
-border: 1px solid black;
 }
 
 .messages{
@@ -86,12 +85,33 @@ overflow-y: scroll;
 height: 90%;
 }
 
+.userMessage{
+    color:white;
+}
 
 .message{
-border: 1px solid green;
+background-color: rgb(51, 43, 9);
 display: inline-flex;
 flex-flow: column nowrap;
+margin-bottom: 10px;
+padding: 0px 10px;
+padding-bottom: 10px;
 }
+
+#send{
+    font-size: 16pt;
+}
+#send:hover{
+    background-color: rgb(89,189,209);
+    color: rgb(235, 225, 192);
+    transition: all 0.2;
+    cursor: pointer;
+}
+
+textarea{
+    font-size: 14pt;
+}
+
 
 .loginAndButton{
 display: flex;
@@ -101,7 +121,7 @@ margin-top: 10px;
 }
 
 .userLogin{
-color: red;
+color: rgb(33, 131, 82);
 }
 
 .inputAndSubmit{
@@ -125,4 +145,10 @@ background-color: white;
 border: 1px solid black;
 
 padding: 5px; 
+}
+
+.delete:hover{
+    background-color: rgb(148, 62, 62);
+    color: black;
+    cursor: pointer;
 }

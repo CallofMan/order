@@ -29,7 +29,7 @@ $userRole = $userRole[0];
         </div>
         <form action="" method="GET" class="inputAndSubmit">
             <textarea name="messageText" class="messageText" placeholder="Введите сообщение"></textarea>
-            <input type="submit" name="messageSubmit" value="Отправить">
+            <input type="submit" id="send" name="messageSubmit" value="Отправить">
         </form>
     </div>
 

@@ -90,7 +90,7 @@ height: 90%;
 }
 
 .message{
-background-color: rgb(51, 43, 9);
+background-color: rgb(98, 50, 5);
 display: inline-flex;
 flex-flow: column nowrap;
 margin-bottom: 10px;
@@ -121,7 +121,7 @@ margin-top: 10px;
 }
 
 .userLogin{
-color: rgb(33, 131, 82);
+color: rgb(171, 235, 203);
 }
 
 .inputAndSubmit{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 23 2019 г., 15:23
+-- Время создания: Дек 24 2019 г., 17:51
 -- Версия сервера: 10.3.13-MariaDB
 -- Версия PHP: 7.1.22
 
@@ -34,6 +34,15 @@ CREATE TABLE `messages` (
   `text_message` text NOT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `messages`
+--
+
+INSERT INTO `messages` (`id`, `Id_user`, `text_message`, `date`) VALUES
+(11, 1, 'тест', '2019-12-24 17:37:53'),
+(13, 1, 'Тест', '2019-12-24 17:38:09'),
+(14, 1, 'Тест', '2019-12-24 17:38:14');
 
 -- --------------------------------------------------------
 
@@ -78,7 +87,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `first_name`, `second_name`, `login`, `password`, `role`, `position`, `email`, `telephone`, `address`) VALUES
-(1, 'test', 'тест', '111', '111', 1, 'Тестировщик', NULL, NULL, NULL);
+(1, 'Test', 'Test', 'Test', 'test', 1, 'Тестировщик ', NULL, NULL, NULL),
+(5, 'Пользователь', 'Пользователь', 'user', 'user', 0, 'Пользователь', '', '', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -112,13 +122,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

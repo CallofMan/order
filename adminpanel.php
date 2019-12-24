@@ -102,6 +102,7 @@ if(isset($_GET['addUser']))
     
 
     <div id="links">
+        <a href="userinfo.php">Редактирование профиля</a>
         <a href="chat.php">Вернуться в чат</a>
         <a href="logout.php" id="exit">Выйти</a>
     </div>

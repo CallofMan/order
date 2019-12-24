@@ -1,3 +1,3 @@
 <?php
-    $link = mysqli_connect('localhost', 'root', '', 'chat');
+    $link = mysqli_connect('localhost', 'root', '', 'chat-practice');
 ?>

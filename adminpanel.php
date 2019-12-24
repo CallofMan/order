@@ -19,28 +19,46 @@ if (isset($_GET['deleteUser']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="adminpanel.css">
     <title>Document</title>
 </head>
 <body>
-    <a href="chat.php">Вернуться в чат</a>
-    <div class="users">
-        <?php
-        $usersQuery = mysqli_query($link, "SELECT * FROM users");
-        
-        while ($user = mysqli_fetch_row($usersQuery))
-        {
-            $userId = $user[0];
-            $userLogin = $user[1];
-            $userPassword = $user[2];
-            echo "<form action='' method='GET' class='user'>";
-                echo "<p class='userLogin'>$userLogin</p>";
-                echo "<p class='userPassword'>$userPassword</p>";
-                echo "<input type='text' value='$userId' name='idUser' style='display: none;'>";
-                echo "<input type='submit' value='Удалить пользователя' name='deleteUser'>";
-            echo "</form>";
-        }
-        
-        ?>
+
+    <div id='info'>
+        <div class='listUser'>
+            <?php
+            $usersQuery = mysqli_query($link, "SELECT * FROM users");
+            
+            while ($user = mysqli_fetch_assoc($usersQuery))
+            {
+                echo "
+                <div class='user'>
+                    <p class='listUserBlock'>".$user['first_name']." ".$user['second_name']." ".$user['position']."</p>
+                </div>";
+            }
+            
+            ?>
+        </div>
+
+        <form id="infoUser">
+            <p>ntcnпра</p>
+            <p>dfgdfg</p>
+            <p>sdgfgdsfg</p>
+            <p>sdfgsdfgdsfg</p>
+            <p>sdfgsdfg</p>
+            <p>gfdghfth</p>
+            <p>fghfghhfgdd</p>
+            <input type="submit" id='deleteUser' name='deleteUser' value='Удалить пользователя'>
+            <input type="submit" id='addUser' name='addUser' value='Добавить нового пользователя'>
+        </form>
     </div>
+    
+    
+
+    <div id="links">
+        <a href="chat.php">Вернуться в чат</a>
+        <a href="logout.php">Выйти</a>
+    </div>
+    
 </body>
 </html>

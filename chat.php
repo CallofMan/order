@@ -6,6 +6,11 @@ if (empty($_SESSION["id_user"]))
 {
     header("Location: login.php");
 }
+
+$idUser = $_SESSION["id_user"];
+$userRole = mysqli_query($link, "SELECT role FROM users WHERE id_user = '$idUser'");
+$userRole = mysqli_fetch_row($userRole);
+$userRole = $userRole[0];
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +24,11 @@ if (empty($_SESSION["id_user"]))
 </head>
 <body>
     <span class="idLoginUser" style="display: none;"><?php echo $_SESSION['id_user']; ?></span>
-
+    <a href="logout.php" id="logout">Выйти</a>
+    <?php if ($userRole == 1)
+    {
+        echo "<a href='adminpanel.php' id='adminpanel'>Панель администратора</a>";
+    } ?>
     <div class="chat">
         <div class="messages">
         </div>
@@ -81,7 +90,6 @@ if (empty($_SESSION["id_user"]))
                     event.preventDefault();
 
                     var idMessage = event.target.dataset.messageid;
-                    console.log(event.target);
                     var deleteMsg = new XMLHttpRequest();
 
                     deleteMsg.open("GET", "deleteMessage.php?id_message="+idMessage, true);

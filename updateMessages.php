@@ -9,9 +9,8 @@ while ($message = mysqli_fetch_row($result))
 {
     $messageId = $message[0];
     $messageIdUser = $message[1];
-    $messageUserLogin = mysqli_query($link, "SELECT login FROM users WHERE id_user = '$messageIdUser'");
-    $messageUserLogin = mysqli_fetch_row($messageUserLogin);
-    $messageUserLogin = $messageUserLogin[0];
+    $messageUserLogin = mysqli_query($link, "SELECT first_name, second_name, position FROM users WHERE id_user = '$messageIdUser'");
+    $messageDataUser = mysqli_fetch_assoc($messageUserLogin);
     $messageText = $message[2];
 
     $userRole = mysqli_query($link, "SELECT role FROM users WHERE id_user = '$idUser'");
@@ -20,7 +19,7 @@ while ($message = mysqli_fetch_row($result))
 
     echo "<form action='' class='message'>";
         echo "<div class='loginAndButton'>";
-            echo "<p class='userLogin'>$messageUserLogin</p>";
+            echo "<p class='userLogin'>".$messageDataUser['first_name']." ".$messageDataUser['second_name']." / ".$messageDataUser['position']."</p>";
             if ($userRole == 1)
             {
                 echo "<input type='submit' class='delete' name='delete' value='Удалить' data-messageid='$messageId'>";

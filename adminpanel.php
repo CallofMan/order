@@ -4,7 +4,12 @@ session_start();
 
 $idUser = $_GET['id_user'];
 
-if ($_SESSION['id_user'] != 1)
+$idUserSession = $_SESSION["id_user"];
+$userRole = mysqli_query($link, "SELECT role FROM users WHERE id_user = '$idUserSession'");
+$userRole = mysqli_fetch_row($userRole);
+$userRole = $userRole[0];
+
+if ($userRole != 1)
 {
     header("Location: index.php");
 }
@@ -73,7 +78,7 @@ if(isset($_GET['addUser']))
             $role = $role[0];
 
             echo "
-            <p>ID User -$userId</p>
+            <p>ID User - $userId</p>
             <p>Имя - $firstName</p>
             <p>Фамилия - $secondName</p>
             <p>Логин - $login</p>
@@ -87,9 +92,10 @@ if(isset($_GET['addUser']))
             ?>
             <input type="text" name="idUser" value="<?php echo $userId; ?>" style='display: none;'>
             <input type="submit" id='deleteUser' name='deleteUser' value='Удалить пользователя'>
-            <input type="submit" id='addUser' name='addUser' value='Добавить нового пользователя'>
       <?php 
             } ?>
+            
+            <input type="submit" id='addUser' name='addUser' value='Добавить нового пользователя'>
         </form>
     </div>
     

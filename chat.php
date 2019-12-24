@@ -34,10 +34,15 @@ $userRole = $userRole[0];
     </div>
 
     <div id='links'>
-        <?php if ($_SESSION['id_user'] == 1)
+        <?php if ($userRole == 1)
         {
             echo "<a href='adminpanel.php'>Панель администратора</a>";
-        } ?>
+        } 
+        else
+        {
+            echo "<a href='userInfo.php'>Редактировать информацию</a>";
+        }
+        ?>
         <a href="logout.php" id='exit'>Выйти</a>
     </div>
 

@@ -24,11 +24,6 @@ $userRole = $userRole[0];
 </head>
 <body>
     <span class="idLoginUser" style="display: none;"><?php echo $_SESSION['id_user']; ?></span>
-    <a href="logout.php" id="logout">Выйти</a>
-    <?php if ($userRole == 1)
-    {
-        echo "<a href='adminpanel.php' id='adminpanel'>Панель администратора</a>";
-    } ?>
     <div class="chat">
         <div class="messages">
         </div>

@@ -47,7 +47,7 @@ if (isset($_GET["enter"]))
             ?>
             <input type="text" placeholder="Введите логин" name="login">
             <input type="password" placeholder="Введите пароль" name="password">
-            <input type="submit" name="enter" value="Войти">
+            <input id="send" type="submit" name="enter" value="Войти">
         </form>
     </div>
 </body>

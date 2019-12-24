@@ -45,16 +45,16 @@ if (empty($_SESSION["id_user"]))
         var messageText = document.querySelector('.messageText').value;
         document.querySelector('.messageText').value = '';
 
-        let send = new XMLHttpRequest();
+        var send = new XMLHttpRequest();
 
         send.onload = function() {
-            let update = new XMLHttpRequest();
+            var update = new XMLHttpRequest();
 
             update.onload = function() {
                 messages.innerHTML = update.response;
             };
 
-            update.open("GET", "updateMessages.php", true);
+            update.open("GET", "updateMessages.php?id_user="+idUser, true);
 
             update.send();
         };
@@ -65,13 +65,28 @@ if (empty($_SESSION["id_user"]))
     });
 
     setInterval(function() {
-        let update = new XMLHttpRequest();
+        var update = new XMLHttpRequest();
 
         update.onload = function() {
             messages.innerHTML = update.response;
+            var allMessages = messages.querySelectorAll('form');
+            allMessages.forEach((message) =>
+            {
+                message.querySelector('.delete').addEventListener('click', function(event)
+                {
+                    event.preventDefault();
+
+                    var idMessage = event.target.dataset.messageid;
+                    console.log(event.target);
+                    var deleteMsg = new XMLHttpRequest();
+
+                    deleteMsg.open("GET", "deleteMessage.php?id_message="+idMessage, true);
+                    deleteMsg.send();
+                });
+            });
         };
 
-        update.open("GET", "updateMessages.php", true);
+        update.open("GET", "updateMessages.php?id_user="+idUser, true);
 
         update.send();
     }, 1000);
